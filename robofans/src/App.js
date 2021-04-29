@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import CardList from './CardList';
 import SearchBox from "./SearchBox";
+import Scroll from './Scroll';
 import "./App.css";
 
 
@@ -22,30 +23,20 @@ class App extends Component{
     this.setState({searchfield : event.target.value});
   }
 
-  componentDidMount(){
+  async componentDidMount(){
+
+    console.log("Inside will");
     
-    fetch('http://jsonplaceholder.typicode.com/users')
+    await fetch('http://jsonplaceholder.typicode.com/users')
     .then(response => {
       return response.json()
     })
     .then(users => {
-      
       this.setState({robots : users});
-      
     })
 
     console.log("After setting state!");
   }
-
-  // Don't worry if you have not understood this fetching & showing of message (the order). 
-
-  // Tomorrow will understand async await and there it will be more clear to you!
-
-  // Today what we did at the end of the session is something that not many can understand. But we will surely will! (What we did was the messy part of JS 😭)
-
-  //Let's meet tomorrow to understand it in a better way!
-
-  // Till tomorrow try to understand lifecycle! That's it.
 
 
   render(){
@@ -62,12 +53,48 @@ class App extends Component{
         <h1>Robofans</h1>{/*You need to change this message when no robots name matches! */}
         <SearchBox searchChange = {this.onSearchChange}/>
         <h1>{this.robotsName}</h1>
-        < CardList robots={filteredRobots}/>
+        <Scroll>
+          <CardList robots={filteredRobots}/>
+        </Scroll>
+        
       </div>
     )
   }
   
 }
+
+// class App extends Component{
+//   constructor(){
+//     super();
+//     this.state = {
+//       name:"Tirth"
+//     }
+//     console.log("Inside Constructor!");
+//   }
+  
+//   componentWillMount(){
+//     console.log("Inside component will mount!");
+//     setTimeout(() => {
+//       await this.setState({name : "Arafat will"});
+//       console.log("Inside setTimeout");
+//     },3000)
+//     console.log("I WILL 2");
+//   }
+
+//   componentDidMount(){
+//     console.log("Inside component did mount!");
+//     setTimeout(() => {
+//       this.setState({name : "Rekha did"});
+//     },1000)
+//   }
+
+//   render(){
+//     console.log("Inside Render!");
+//     return (
+//       <h1>Hello world this is {this.state.name}</h1>
+//     )
+//   }
+// }
 
 
 export default App;
