@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import tachyons from 'tachyons';
-import App from './App';
+import App from './containers/App';
 
 // const Layout = (props) => {
 

@@ -1,19 +1,19 @@
 import React,{Component} from 'react';
-import CardList from './CardList';
-import SearchBox from "./SearchBox";
-import Scroll from './Scroll';
+import CardList from '../components/CardList';
+import SearchBox from "../components/SearchBox";
+import Scroll from '../components/Scroll';
+import Popup from '../components/Popup';
 import "./App.css";
 
 
 class App extends Component{
 
-  robotsName = [];
-
   constructor(){
     super();
     this.state = {
       robots : [],
-      searchfield : ''
+      searchfield : '',
+      popup: false
     }
 
     console.log("Constructor!")
@@ -27,7 +27,7 @@ class App extends Component{
 
     console.log("Inside will");
     
-    await fetch('http://jsonplaceholder.typicode.com/users')
+    await fetch('https://jsonplaceholder.typicode.com/users')
     .then(response => {
       return response.json()
     })
@@ -38,29 +38,40 @@ class App extends Component{
     console.log("After setting state!");
   }
 
+  openPopup = () => {
+    this.setState({popup:true});
+  }
+
+  closePopup = () => {
+    this.setState({popup:false});
+  }
+
 
   render(){
-
+    const {robots,searchfield} = this.state;
     console.log("Render runned");
-
-
-    const filteredRobots = this.state.robots.filter((robot) => {
-      return robot.name.toLowerCase().includes(this.state.searchfield.toLowerCase());
+    const filteredRobots = robots.filter((robot) => {
+      return robot.name.toLowerCase().includes(searchfield.toLowerCase());
     })
 
-    return(
-      <div className="tc">
-        <h1>Robofans</h1>{/*You need to change this message when no robots name matches! */}
-        <SearchBox searchChange = {this.onSearchChange}/>
-        <h1>{this.robotsName}</h1>
-        <Scroll>
-          <CardList robots={filteredRobots}/>
-        </Scroll>
-        
-      </div>
-    )
+    return !filteredRobots.length ?
+        <h1>Loading.......</h1> 
+        :
+      (
+        <React.Fragment>
+        {this.state.popup ? <Popup closePopup = {this.closePopup}/> : ""}
+        <div className="tc">
+          
+          <h1>Robofans</h1>{/*You need to change this message when no robots name matches! */}
+          <button onClick={this.openPopup}>Open Popup</button>
+          <SearchBox searchChange = {this.onSearchChange}/>
+          <Scroll>
+            <CardList robots={filteredRobots}/>
+          </Scroll>
+        </div>
+        </React.Fragment>
+      )
   }
-  
 }
 
 // class App extends Component{
