@@ -11,6 +11,18 @@ class App extends Component {
       progress:0
     }
   }
+
+  componentDidMount(){
+    let all = localStorage.getItem("items") !== null ? JSON.parse(localStorage.getItem("items")) : [];
+    this.setState({items : all})
+    
+  }
+
+  componentDidUpdate(){
+    localStorage.setItem("items",JSON.stringify(this.state.items));
+    // localStorage.setItem("progress",this.state.progress);
+  }
+
   onEditing = () => {
     this.setState({isEditing : true});
    }
@@ -19,6 +31,10 @@ class App extends Component {
   }
   onSubmit = e => {
     e.preventDefault();
+    if (this.state.input.length === 0 ) {
+      alert("Pls enter something!");
+      return 0;
+    }
     const items = {id: new Date().getTime(), text : this.state.input, isCompleted:false};
     this.setState({items : this.state.items.concat(items), input:""},() => this.setProgress(this.state.items));
    }
