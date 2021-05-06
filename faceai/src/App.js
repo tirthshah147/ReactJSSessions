@@ -22,7 +22,7 @@ const particlesEffect = {
   }
 
   const app = new Clarifai.App({
-    apiKey: 'e4fd3b8db88443adb5f58e6cd3234e4a'
+    apiKey: 'XXXXXXXXXXXXXXXXXXX'
    });
 
 
