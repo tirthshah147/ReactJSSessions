@@ -1,5 +1,7 @@
 import React from "react";
 import "./Item.css";
+import {Link} from 'react-router-dom';
+
 const Item = ({ course }) => {
   return (
     <div className="course">
@@ -10,7 +12,8 @@ const Item = ({ course }) => {
           className="course__img"
         />
       </div>
-      <h4 className="course__title">{course.title}</h4>
+      <Link to={`/courses/${course.id}`}><h4 className="course__title">{course.title}</h4></Link>
+      
       <span className="course__author">By: {course.author}</span>
       <span className="course__price">{course.price}$</span>
       <span className={course.isHot ? "course__status hot" : "course__status"}>
