@@ -1,7 +1,7 @@
 import React from 'react';
 
-
 class CounterClass extends React.Component{
+  timer;
   constructor(){
     super();
     this.state={
@@ -12,10 +12,20 @@ class CounterClass extends React.Component{
 
   handleClick = () => {
     this.setState((prevState) => ({
-      
-      isOn : !this.state.isOn
+      isOn : !prevState.isOn,
+      count : prevState.count + 1
     }))
   }
+
+  // componentDidMount(){
+  //   document.title =  this.state.isOn;
+  // }
+
+
+  // componentDidUpdate(){
+  //   document.title =  this.state.isOn;
+  // }
+
 
   render(){
     return (
