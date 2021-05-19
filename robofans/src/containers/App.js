@@ -3,6 +3,7 @@ import CardList from '../components/CardList';
 import SearchBox from "../components/SearchBox";
 import Scroll from '../components/Scroll';
 import Popup from '../components/Popup';
+import ErrorBoundary from '../components/ErrorBoundary';
 import "./App.css";
 
 
@@ -61,12 +62,17 @@ class App extends Component{
         <React.Fragment>
         {this.state.popup ? <Popup closePopup = {this.closePopup}/> : ""}
         <div className="tc">
-          
           <h1>Robofans</h1>{/*You need to change this message when no robots name matches! */}
           <button onClick={this.openPopup}>Open Popup</button>
-          <SearchBox searchChange = {this.onSearchChange}/>
+          <ErrorBoundary>
+            <SearchBox searchChange = {this.onSearchChange}/>
+          </ErrorBoundary>
+          
           <Scroll>
-            <CardList robots={filteredRobots}/>
+            <ErrorBoundary>
+              <CardList robots={filteredRobots}/>
+            </ErrorBoundary>
+            
           </Scroll>
         </div>
         </React.Fragment>
