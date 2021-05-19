@@ -20,16 +20,25 @@ const CounterHook = () => {
     // return () => console.log(isOn);
   },[isOn])
 
-  useEffect(()=>{
-    console.log(count);
-    return () => console.log(count);
-  },[count])
+  useEffect(() => {
+    const timer = setInterval(()=>{
+      console.log("isOn",isOn)
+    },1000)
+    return () => {
+      clearInterval(timer);
+    }
+  }, [])
+
+  // useEffect(()=>{
+  //   console.log(count);
+  //   return () => console.log(count);
+  // },[count])
 
 
-  useEffect(()=>{
-    console.log("Hello Tirth!");
-    // return () => alert("Hi Tirth!");
-  },[])
+  // useEffect(()=>{
+  //   console.log("Hello Tirth!");
+  //   return () => alert("Hi Tirth!");
+  // },[])
 
   // useEffect(()=>{
   //   console.log("Effect Start");
