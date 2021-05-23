@@ -1,8 +1,36 @@
+import {useContext} from 'react';
+import {FirstName, LastName} from '../App';
 
+// const fetchingData = async()= >{
+//   const response = await fetch(url);
+//   const finalResp = await response.json();
+//   console.log(finalResp);
 
-function Comp3(props) {
+//   const response2 = await fetch(url2);
+//   const finalResp2 = await response2.json();
+//   console.log(finalResp2);
+// }
+
+function Comp3(){
+  const fname = useContext(FirstName);
+  const lname = useContext(LastName);
   return (
-      <h1>My name is {props.name}</h1>
+      // <FirstName.Consumer>
+      //   {
+      //     (fname) => {
+      //      return (
+      //           <LastName.Consumer>
+      //           {
+      //             (lname) => {
+      //               return <h1>My name is {fname} {lname}</h1>
+      //             }
+      //           }
+      //         </LastName.Consumer>
+      //      ) 
+      //     }
+      //   }
+      // </FirstName.Consumer>
+      <h1>My name is {fname} {lname}</h1>
   );
 }
 

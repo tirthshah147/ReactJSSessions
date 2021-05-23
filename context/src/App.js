@@ -1,11 +1,18 @@
+import { createContext } from 'react';
 import Comp1 from './components/Comp1';
 
+export const FirstName = createContext();
+export const LastName = createContext();
+
 function App() {
-  const name = "Manjeema!";
   return (
-    <div className="App">
-      <Comp1 name={name}/>
-    </div>
+    <>
+      <FirstName.Provider value={"Tirth"}>
+        <LastName.Provider value={"Shah"}>
+          <Comp1/> 
+        </LastName.Provider>
+      </FirstName.Provider>
+    </>
   );
 }
 

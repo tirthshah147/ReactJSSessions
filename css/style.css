@@ -1,0 +1,128 @@
+/* .border{
+  width: 100%;
+  height:50px;
+  border: 5px dashed green;
+  font-size: 20px;
+} */
+/* 
+.border:last-child{
+  color:red;
+} */
+
+/* .border:nth-child(1){
+  color:red;
+} */
+
+/* #blue{
+  color:blue;
+} */
+/* 
+div p{
+  color:blue;
+}
+
+p{
+  color:green;
+}
+
+p{
+  color:red;
+} */
+
+/* input{
+  transition: all 1s ease;
+} */
+
+/* input:focus{
+  outline: none;
+  padding:10px;
+  background-color: deepskyblue;
+} */
+
+/* .container{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+} */
+
+/* .text{
+  color:white;
+  position: relative;
+  font-size: 100px;
+  overflow: hidden;
+} */
+
+/* .text::before{
+  content: "Tirth";
+  color:aqua;
+  position: absolute;
+  left:-0%;
+}
+
+.text::after{
+  content: "rekha";
+  color:aqua;
+  
+} */
+
+/* 
+.black{
+  width: 600px;
+  height: 600px;
+  background-color: black;
+  position: relative;
+  
+}
+
+.png{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top:0;
+  left:0;
+}
+
+
+.blue{
+  width: 400px;
+  height: 400px;
+  background-color: blue;
+  position: absolute;
+  
+}
+
+
+.red{
+  width: 200px;
+  height: 200px;
+  background-color: red;
+  position: absolute;
+  top:0;
+  left:0;
+} */
+
+/* span{
+  background-color: brown;
+} */
+
+/* body{
+  margin: 0;
+  padding: 0;
+}
+
+.box{
+  width: 100px;
+  height: 100px;
+  padding: 10px;
+  margin: 10px;
+  border: 10px solid black;
+  background-color: chartreuse;
+  box-sizing: border-box;
+
+} */
+
