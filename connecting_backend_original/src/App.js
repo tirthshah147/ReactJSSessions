@@ -97,6 +97,7 @@ export default function App(){
   })
 
   console.log(result);
+  console.log(result.data.imagePath);
   setImagePath(result.data.imagePath);
   
 
@@ -122,7 +123,10 @@ export default function App(){
         <button type="submit">Submit</button>
       </form>
       
-      {imagePath ? <img src={"http://localhost:8080/" + imagePath} /> : "" }
+      {/* {imagePath ? <img src={"http://localhost:8080/" + imagePath} /> : "" } */}
+     
+
+      {imagePath ? <img src={imagePath} alt="tirth"/> : "" }
     </div>
   );
   
