@@ -2,38 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import {Provider} from 'react-redux';
-import {createStore} from 'redux';
-import {searchRobots} from './reducers';
+import {createStore,applyMiddleware, combineReducers} from 'redux';
+import {createLogger} from 'redux-logger';
+import thunkMiddleware from 'redux-thunk';
+import {searchRobots,requestRobots} from './reducers';
 import reportWebVitals from './reportWebVitals';
 import tachyons from 'tachyons';
 import App from './containers/App';
 
-// const Layout = (props) => {
+const logger = createLogger();
 
-//   console.log(props.children);
-//   return (
-//     <div>
-//       <header>My Header</header>
-//       <main>{props.children[0]}</main>
-//       <h1>I am a third child!</h1>
-      
-//     </div>
-//   )
-// }
+const rootReducer = combineReducers({searchRobots, requestRobots})
 
-// const App = () => {
-//   return(
-//     <div>
-//       <Layout> 
-//         <h1>I am First Child</h1>
-//         <h1>I am Second Child</h1>
-//       </Layout>
-//     </div>
-    
-//   )
-// }
-
-const store = createStore(searchRobots);
+const store = createStore(rootReducer, applyMiddleware(thunkMiddleware,logger));
 
 ReactDOM.render(
   <React.StrictMode>
