@@ -1,8 +1,8 @@
 import React from "react";
 import "./Navbar.css";
-import {NavLink,Link} from 'react-router-dom';
+import {NavLink,Link, withRouter} from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = (props) => {
   return (
     <div className="header__nav">
       <div className="nav__content">
@@ -28,9 +28,9 @@ const Navbar = () => {
         </nav>
       </div>
       <div className="header__buttons">
-        <Link className="btn btn-login" to="/login">
+        <div className="btn btn-login" onClick={() => props.history.push('/profile')}>
           Login
-        </Link>
+        </div>
         <Link className="btn btn-signup" to="/signup">
           Signup
         </Link>
@@ -39,4 +39,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default withRouter(Navbar);

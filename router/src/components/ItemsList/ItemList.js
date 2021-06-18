@@ -1,10 +1,11 @@
-  import React, { useState } from "react";
+import React, { useState } from "react";
 import data from "../../data.json";
 import Item from "../Item/Item.js";
 import "./ItemList.css";
 
-const ItemList = () => {
+const ItemList = (props) => {
   const [courses] = useState(data);
+  console.log(props);
   return (
     <div className="courses">
       {courses.map(course => (
