@@ -1,0 +1,12 @@
+https://api.ipinfodb.com/v3/ip-city/?key=YOUR_API_KEY&ip=IPV4_OR_IPV6_ADDRESS&format=json
+
+http://api.weatherstack.com/current?access_key=ed39a368214c1b5b2feb26ae682271e1&query=vadodara
+
+IP GEOLOCATION : 63509115da54fe81d54201fa1391f09fb120c5083d171bcd831e560240b983e0
+
+
+https://api.ipify.org/?format=json
+
+https://api.ipinfodb.com/v3/ip-city/?key=63509115da54fe81d54201fa1391f09fb120c5083d171bcd831e560240b983e0&ip=103.241.226.193&format=json
+
+http://api.weatherstack.com/current?access_key=ed39a368214c1b5b2feb26ae682271e1&query=vadodara

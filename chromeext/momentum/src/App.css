@@ -1,0 +1,138 @@
+body,html{
+  margin: 0;
+  padding: 0;
+}
+
+.mainBackground{
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.png{
+  width: 100%;
+  position: absolute;
+  height: 100%;
+  top:0;
+}
+
+
+.header{
+  width: 98%;
+  position: absolute;
+  margin-left:1%;
+  top:15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.temperature{
+  position: relative;
+  text-align: center;
+  font-size: 25px;
+  color:white;
+  width: auto;
+  padding: 0 0px 0px 5px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+sup{
+  font-size: 16px;
+}
+
+.cityName{
+  font-size: 15px;
+}
+
+.fa-search{
+  color:white;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.fa-search:hover + .google_search{
+  border-style: solid;
+  border-width: 1.5px;
+  border-color: transparent transparent rgba(255,255,255,0.8) transparent;
+}
+
+.google_search{
+  background-color: transparent;
+  border: none;
+  outline: none;
+  text-indent: 10px;
+  color:white;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.google_search:focus{
+  border-style: solid;
+  border-width: 1.5px;
+  border-color: transparent transparent rgba(255,255,255,0.8) transparent;
+}
+
+
+.center{
+  padding: 20px;
+  position: absolute;
+  left:50%;
+  top:50%;
+  transform: translate(-45%,-50%);
+  text-align: center;
+  color:white;
+}
+
+
+.center--time{
+  font-size: 140px;
+  font-weight: bold;
+}
+
+.center--personal_line{
+  position:relative;
+  font-size: 60px;
+  top:-20px;
+}
+
+.center--asking_line{
+  font-size: 35px;
+}
+
+.todoInput{
+  width: 100%;
+  background-color: transparent;
+  border-color: transparent transparent white transparent;
+  margin-top:10px;
+  color:white;
+  outline:none;
+  text-align: center;
+  font-size: 35px;
+}
+
+.todo--mainBlock{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.todo_headtext{
+  font-size: 23px;
+  font-weight: bold;
+}
+
+.todo--title{
+  font-size: 35px;
+  margin-right:20px;
+}
+
+.checkbox{
+  transform: scale(1.5);
+  border: none;
+  outline:none;
+  margin-right:20px;
+  opacity: 0.5;
+}

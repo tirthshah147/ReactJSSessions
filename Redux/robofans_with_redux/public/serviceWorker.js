@@ -14,6 +14,8 @@ self.addEventListener('install',(event) => {
   )
 })
 
+
+
 // Listening for the request
 self.addEventListener('fetch', (event) => {
   event.respondWith(
