@@ -136,3 +136,23 @@ sup{
   margin-right:20px;
   opacity: 0.5;
 }
+
+.footer{
+  width: 98%;
+  position: absolute;
+  margin-left:1%;
+  bottom:20px;
+  display: flex;
+  justify-content: space-between;
+  color:white;
+  font-size: 13px;
+  align-items: center;
+}
+
+.footer--quote{
+  font-size: 17px;
+  max-width: 500px;
+  text-align: center;
+}
+
+
